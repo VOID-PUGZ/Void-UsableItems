@@ -1,10 +1,10 @@
 # Void UsableItems Script
 
-A comprehensive and easy-to-use script for ox_inventory that allows players to use items with various features including required items, rewards, animations, and progress bars.
+A comprehensive and easy-to-use script for both ox_inventory and qb_inventory that allows players to use items with various features including required items, rewards, animations, and progress bars.
 
 ## Features
 
-- ✅ **ox_inventory Integration** - Works seamlessly with ox_inventory
+- ✅ **Dual Inventory Support** - Works with both ox_inventory and qb_inventory
 - ✅ **ox_lib Progress Bars** - Beautiful progress bars for item usage
 - ✅ **QBCore Notifications** - Uses QBCore's notification system
 - ✅ **Required Items** - Items can require other items to be used
@@ -18,18 +18,44 @@ A comprehensive and easy-to-use script for ox_inventory that allows players to u
 
 ## Dependencies
 
-- ox_inventory
 - ox_lib
 - qb-core
-- qb-inventory
+- **ox_inventory** OR **qb_inventory** (choose one in config)
+
+
+### Support
+
+```bash
+# Discord
+git clone https://discord.gg/KvZv9AFE
+
+# Support me @
+git clone https://ko-fi.com/voidscriptsdonos
+```
+
+
+
+# For ox_inventory:
+git clone https://github.com/overextended/ox_inventory.git resources/ox_inventory
+```
 
 ## Installation
 
 1. Place the script in your resources folder
-2. Add `ensure Void-UsableItems` to your server.cfg
-3. Restart your server
+2. Configure your preferred inventory system in `config.lua`
+3. Add `ensure Void-UsableItems` to your server.cfg
+4. Restart your server
 
 ## Configuration
+
+### Inventory System Selection
+
+```lua
+-- Choose your inventory system
+Config.InventorySystem = 'ox_inventory' -- Options: 'ox_inventory' or 'qb_inventory'
+```
+
+**Important:** Only set one inventory system. The script will automatically use the appropriate functions for the selected system.
 
 ### Basic Item Structure
 
@@ -136,6 +162,11 @@ A comprehensive and easy-to-use script for ox_inventory that allows players to u
 
 ## Configuration Options
 
+### Inventory System
+- **`ox_inventory`**: Uses ox_inventory exports and functions
+- **`qb_inventory`**: Uses QBCore's native inventory functions
+- **Default**: `ox_inventory`
+
 ### removeOnUse
 - **true**: The item will be consumed (removed from inventory) when used
 - **false**: The item will remain in inventory after use
@@ -151,6 +182,25 @@ A comprehensive and easy-to-use script for ox_inventory that allows players to u
 - Items can require other items to be used
 - `consume` option determines if required item is consumed
 - Multiple required items supported
+
+## Switching Between Inventory Systems
+
+To switch from ox_inventory to qb_inventory (or vice versa):
+
+1. **Change the config option:**
+   ```lua
+   Config.InventorySystem = 'qb_inventory' -- or 'ox_inventory'
+   ```
+
+2. **Restart the resource:**
+   ```
+   restart Void-UsableItems
+   ```
+
+3. **The script will automatically:**
+   - Use the appropriate inventory functions
+   - Handle item adding/removing correctly
+   - Check item counts using the right method
 
 ## Admin Commands
 
@@ -223,8 +273,13 @@ This will show:
 - Usage logs
 - Reward distribution logs
 - Item consumption logs
+- Inventory system being used
 - Debug command output
 
 ## Support
 
 For support or questions, please refer to the Void Scripts community.
+
+## License
+
+This script is provided as-is for educational and entertainment purposes.
