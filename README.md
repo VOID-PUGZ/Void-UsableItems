@@ -21,6 +21,7 @@ A comprehensive and easy-to-use script for ox_inventory that allows players to u
 - ox_inventory
 - ox_lib
 - qb-core
+- qb-inventory
 
 ## Installation
 
