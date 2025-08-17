@@ -27,10 +27,10 @@ A comprehensive and easy-to-use script for both ox_inventory and qb_inventory th
 
 ```bash
 # Discord
-git clone https://discord.gg/KvZv9AFE
+https://discord.gg/KvZv9AFE
 
 # Support me @
-git clone https://ko-fi.com/voidscriptsdonos
+ https://ko-fi.com/voidscriptsdonos
 ```
 
 
